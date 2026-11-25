@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bank Marketing — Project Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal.js core -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/theme/blood.min.css" id="theme">
+
+    <style>
+        :root {
+            --accent: #3b82f6;
+            --green: #10b981;
+            --gold: #f59e0b;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-transform: none;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .reveal h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #fff 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal h2 {
+            font-size: 1.8em;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .reveal p,
+        .reveal li {
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .kpi-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .kpi-val {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: var(--green);
+        }
+
+        .kpi-label {
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #aaa;
+        }
+
+        .viz-img {
+            max-height: 50vh !important;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .highlight-g {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .highlight-y {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .metrics-table {
+            font-size: 0.7em !important;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .metrics-table th {
+            color: var(--accent);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+            padding: 10px !important;
+        }
+
+        .metrics-table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            padding: 10px !important;
+        }
+
+        .metrics-table tr.best td {
+            color: var(--green);
+            font-weight: bold;
+            background: rgba(16, 185, 129, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: TITLE -->
+            <section>
+                <h1>Bank Marketing Dataset</h1>
+                <h3>Predicting Term Deposit Subscriptions</h3>
+                <p style="margin-top:40px; color:#aaa">Data Science Assignment Presentation</p>
+                <div style="display:flex; justify-content:center; gap:15px; margin-top:30px">
+                    <span
+                        style="background:rgba(59,130,246,0.2); padding:5px 15px; border-radius:30px; font-size:0.6em">Classification</span>
+                    <span
+                        style="background:rgba(16,185,129,0.2); padding:5px 15px; border-radius:30px; font-size:0.6em">Feature
+                        Engineering</span>
+                    <span
+                        style="background:rgba(245,158,11,0.2); padding:5px 15px; border-radius:30px; font-size:0.6em">Data
+                        Visualization</span>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: INTRO -->
+            <section>
+                <h2>Project Overview</h2>
+                <div class="grid-2">
+                    <div style="text-align:left">
+                        <p><strong>Goal:</strong> Predict if a client will subscribe to a term deposit based on direct
+                            marketing campaigns.</p>
+                        <p><strong>Two Core Tasks:</strong></p>
+                        <ul>
+                            <li><span class="highlight">Task 1:</span> Classification Model &amp; Feature Engineering
+                            </li>
+                            <li><span class="highlight">Task 2:</span> Data Visualization Dashboard</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="kpi-box">
+                            <div class="kpi-val">11,162</div>
+                            <div class="kpi-label">Total Records</div>
+                        </div>
+                        <div class="kpi-box">
+                            <div class="kpi-val">17</div>
+                            <div class="kpi-label">Features</div>
+                        </div>
+                        <div class="kpi-box">
+                            <div class="kpi-val">52.6%</div>
+                            <div class="kpi-label">Class Balance (No)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: DASHBOARD -->
+            <section>
+                <h2>Task 2: Data Visualization</h2>
+                <p>Built a comprehensive 10-chart interactive dashboard to explore the dataset.</p>
+                <img src="dashboard.png" class="viz-img" alt="Dashboard"
+                    onerror="this.src='https://via.placeholder.com/800x400?text=Run+visualize.py+to+generate+dashboard.png'">
+            </section>
+
+            <!-- SLIDE 4: KEY INSIGHTS -->
+            <section>
+                <h2>Key Data Insights</h2>
+                <ul style="text-align:left; font-size:0.8em">
+                    <li style="margin-bottom:15px">🕰️ <span class="highlight">Call Duration:</span> The strongest
+                        single predictor. Longer calls indicate genuine engagement and higher conversion.</li>
+                    <li style="margin-bottom:15px">💼 <span class="highlight">Demographics:</span> Retired clients (>50%
+                        rate) and students (74% rate) are the most receptive demographics.</li>
+                    <li style="margin-bottom:15px">🔄 <span class="highlight">Previous Success:</span> Clients with a
+                        successful prior campaign convert at over <span class="highlight-g">60%</span>.</li>
+                    <li style="margin-bottom:15px">📅 <span class="highlight">Seasonality:</span> May has the highest
+                        contact volume but low conversion. March, Sep, Oct, and Dec are highly effective.</li>
+                    <li>📱 <span class="highlight">Contact Method:</span> Cellular contact significantly outperforms
+                        landlines.</li>
+                </ul>
+            </section>
+
+            <!-- SLIDE 5: FEATURE ENGINEERING -->
+            <section>
+                <h2>Task 1: Feature Engineering</h2>
+                <p style="text-align:left; font-size:0.8em">Created 4 new features to improve predictive signal before
+                    modeling:</p>
+                <div class="grid-2" style="margin-top:30px">
+                    <div class="kpi-box">
+                        <div class="highlight" style="font-size:0.8em">has_previous</div>
+                        <p style="font-size:0.55em">1 if contacted in prior campaign</p>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="highlight" style="font-size:0.8em">contacted_before</div>
+                        <p style="font-size:0.55em">1 if pdays ≠ -1</p>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="highlight" style="font-size:0.8em">balance_log</div>
+                        <p style="font-size:0.55em">Log-transformed account balance</p>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="highlight" style="font-size:0.8em">age_group</div>
+                        <p style="font-size:0.55em">Age binned into 5 ordinal groups</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: MODEL PIPELINE -->
+            <section>
+                <h2>Model Pipeline</h2>
+                <div style="text-align:left; margin-bottom:30px">
+                    <p><strong>Preprocessing:</strong> 80/20 Stratified Split, Label Encoding, StandardScaler (for
+                        Linear models)</p>
+                    <p><strong>4 Models Evaluated:</strong></p>
+                </div>
+                <ul style="text-align:left; display:inline-block">
+                    <li>Logistic Regression <span style="font-size:0.6em; color:#aaa">(Linear Baseline)</span></li>
+                    <li>Decision Tree <span style="font-size:0.6em; color:#aaa">(Non-linear rules)</span></li>
+                    <li>Random Forest <span style="font-size:0.6em; color:#aaa">(Bagging Ensemble)</span></li>
+                    <li>Gradient Boosting <span style="font-size:0.6em; color:#aaa">(Sequential Boosting)</span></li>
+                </ul>
+            </section>
+
+            <!-- SLIDE 7: RESULTS -->
+            <section>
+                <h2>Performance Results</h2>
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1 Score</th>
+                            <th>ROC-AUC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logistic Regression</td>
+                            <td>83.83%</td>
+                            <td>84.68%</td>
+                            <td>80.08%</td>
+                            <td>82.31%</td>
+                            <td>0.9119</td>
+                        </tr>
+                        <tr>
+                            <td>Decision Tree</td>
+                            <td>88.09%</td>
+                            <td>88.50%</td>
+                            <td>85.80%</td>
+                            <td>87.12%</td>
+                            <td>0.9556</td>
+                        </tr>
+                        <tr>
+                            <td>Random Forest</td>
+                            <td>89.03%</td>
+                            <td>90.36%</td>
+                            <td>85.80%</td>
+                            <td>88.02%</td>
+                            <td>0.9543</td>
+                        </tr>
+                        <tr class="best">
+                            <td>★ Gradient Boosting</td>
+                            <td>89.43%</td>
+                            <td>91.35%</td>
+                            <td>85.61%</td>
+                            <td>88.39%</td>
+                            <td>0.9625</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.6em; margin-top:20px; color:#aaa">Cross-Validation (5-Fold) confirmed AUC of
+                    0.9610 ± 0.0032 for GB, proving no over-fitting.</p>
+            </section>
+
+            <!-- SLIDE 8: MODEL DASHBOARD -->
+            <section>
+                <h2>Model Dashboard</h2>
+                <img src="model_dashboard.png" class="viz-img" alt="Model Dashboard"
+                    onerror="this.src='https://via.placeholder.com/800x400?text=Run+analysis.py+to+generate+model_dashboard.png'">
+            </section>
+
+            <!-- SLIDE 9: RECOMMENDATIONS -->
+            <section>
+                <h2>Business Recommendations</h2>
+                <div style="text-align:left; font-size:0.75em">
+                    <p>Based on our models, the marketing team should:</p>
+                    <ul>
+                        <li style="margin-bottom:10px"><span class="highlight-g">Prioritize Duration:</span> Train
+                            agents to sustain meaningful conversations.</li>
+                        <li style="margin-bottom:10px"><span class="highlight-g">Target Successes:</span> Clients with
+                            previous campaign success are the highest-quality leads.</li>
+                        <li style="margin-bottom:10px"><span class="highlight-g">Shift Timing:</span> Reduce May
+                            outreach; focus heavily on March, Sep, Oct.</li>
+                        <li style="margin-bottom:10px"><span class="highlight-g">Target Demographics:</span>
+                            Specifically tailor campaigns for retired clients and students.</li>
+                        <li><span class="highlight-g">Update Contact Info:</span> Cellular contact is crucial;
+                            prioritize gathering mobile numbers.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: CONCLUSION -->
+            <section>
+                <h2>Conclusion</h2>
+                <p style="font-size:0.9em; text-align:left">
+                    The <span class="highlight">Gradient Boosting</span> classification pipeline predicts term deposit
+                    subscriptions with <span class="highlight-g">89.4% accuracy</span> and an <span
+                        class="highlight-g">AUC of 0.96</span>.
+                </p>
+                <p style="font-size:0.9em; text-align:left">
+                    By deploying this model as a lead-scoring tool, the bank can optimize call times, reduce campaign
+                    fatigue, and significantly increase conversion rates.
+                </p>
+                <h3 style="margin-top:50px; color:var(--gold)">Thank You!</h3>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'fade', // none/fade/slide/convex/concave/zoom
+            center: true,
+            slideNumber: 'c/t'
+        });
+    </script>
+</body>
+
+</html>
